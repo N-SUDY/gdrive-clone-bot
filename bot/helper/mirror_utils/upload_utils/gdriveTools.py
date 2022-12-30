@@ -315,7 +315,8 @@ class GoogleDriveHelper:
                 else:
                     raise err
 
-    def __escapes(self, estr):
+    @staticmethod
+    def __escapes(estr):
         chars = ['\\', "'", '"', r'\a', r'\b', r'\f', r'\n', r'\r', r'\t']
         for char in chars:
             estr = estr.replace(char, f'\\{char}')

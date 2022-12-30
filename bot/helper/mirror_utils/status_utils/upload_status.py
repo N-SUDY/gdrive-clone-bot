@@ -17,7 +17,8 @@ class UploadStatus:
     def size(self):
         return get_readable_file_size(self.__size)
 
-    def status(self):
+    @staticmethod
+    def status():
         return MirrorStatus.STATUS_UPLOADING
 
     def name(self):
