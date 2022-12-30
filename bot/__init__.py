@@ -1,6 +1,7 @@
 from logging import getLogger, FileHandler, StreamHandler, INFO, basicConfig, error as log_error
 from socket import setdefaulttimeout
 from faulthandler import enable as faulthandler_enable
+import sys
 from telegram.ext import Updater as tgUpdater, Defaults
 from os import remove as osremove, path as ospath, environ
 from subprocess import run as srun
@@ -35,7 +36,7 @@ user_data = {}
 try:
     if bool(environ.get('_____REMOVE_THIS_LINE_____')):
         log_error('The README.md file there to be read! Exiting now!')
-        exit()
+        sys.exit()
 except:
     pass
 
@@ -53,28 +54,28 @@ download_dict = {}
 BOT_TOKEN = environ.get('BOT_TOKEN', '')
 if len(BOT_TOKEN) == 0:
     log_error("BOT_TOKEN variable is missing! Exiting now")
-    exit(1)
+    sys.exit(1)
 
 bot_id = int(BOT_TOKEN.split(':', 1)[0])
 
 OWNER_ID = environ.get('OWNER_ID', '')
 if len(OWNER_ID) == 0:
     log_error("OWNER_ID variable is missing! Exiting now")
-    exit(1)
+    sys.exit(1)
 else:
     OWNER_ID = int(OWNER_ID)
 
 TELEGRAM_API = environ.get('TELEGRAM_API', '')
 if len(TELEGRAM_API) == 0:
     log_error("TELEGRAM_API variable is missing! Exiting now")
-    exit(1)
+    sys.exit(1)
 else:
     TELEGRAM_API = int(TELEGRAM_API)
 
 TELEGRAM_HASH = environ.get('TELEGRAM_HASH', '')
 if len(TELEGRAM_HASH) == 0:
     log_error("TELEGRAM_HASH variable is missing! Exiting now")
-    exit(1)
+    sys.exit(1)
 
 GDRIVE_ID = environ.get('GDRIVE_ID', '')
 if len(GDRIVE_ID) == 0:
