@@ -28,6 +28,8 @@ class GoogleDriveHelper:
         self.__G_DRIVE_DIR_MIME_TYPE = "application/vnd.google-apps.folder"
         self.__G_DRIVE_BASE_DOWNLOAD_URL = "https://drive.google.com/uc?id={}&export=download"
         self.__G_DRIVE_DIR_BASE_DOWNLOAD_URL = "https://drive.google.com/drive/folders/{}"
+        self.__listener = listener
+        self.__path = path
         self.__total_bytes = 0
         self.__total_files = 0
         self.__total_folders = 0
@@ -35,10 +37,15 @@ class GoogleDriveHelper:
         self.__start_time = 0
         self.__total_time = 0
         self.__alt_auth = False
+        self.__is_uploading = False
+        self.__is_downloading = False
         self.__is_cloning = False
         self.__is_cancelled = False
+        self.__is_errored = False
         self.__status = None
+        self.__updater = None
         self.__update_interval = 3
+        self.__size = size
         self._file_processed_bytes = 0
         self.name = name
         self.processed_bytes = 0
