@@ -1,18 +1,13 @@
-from signal import signal, SIGINT
-from os import path as ospath, remove as osremove, execl as osexecl
-from subprocess import run as srun, check_output
 from psutil import disk_usage, cpu_percent, swap_memory, cpu_count, virtual_memory, net_io_counters, boot_time
 from time import time
-from sys import executable
 from telegram.ext import CommandHandler
 
-from bot import bot, dispatcher, updater, botStartTime, LOGGER, Interval, main_loop
+from bot import dispatcher, updater, botStartTime, LOGGER, main_loop
 from .helper.ext_utils.bot_utils import get_readable_time, get_readable_file_size
 from .helper.telegram_helper.bot_commands import BotCommands
 from .helper.telegram_helper.message_utils import sendMessage, editMessage
 from .helper.telegram_helper.filters import CustomFilters
 from .helper.telegram_helper.button_build import ButtonMaker
-from .modules import list, cancel_mirror, clone, delete, count
 
 
 def stats(update, context):

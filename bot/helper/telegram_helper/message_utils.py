@@ -1,6 +1,5 @@
 from time import sleep, time
 from telegram.error import RetryAfter
-from os import remove
 
 from bot import config_dict, LOGGER, status_reply_dict, status_reply_dict_lock, Interval, bot
 from bot.helper.ext_utils.bot_utils import get_readable_message, setInterval
