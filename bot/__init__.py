@@ -1,11 +1,11 @@
-from logging import getLogger, FileHandler, StreamHandler, INFO, basicConfig, error as log_error, info as log_info, warning as log_warning
+from logging import getLogger, FileHandler, StreamHandler, INFO, basicConfig, error as log_error
 from socket import setdefaulttimeout
 from faulthandler import enable as faulthandler_enable
 from telegram.ext import Updater as tgUpdater, Defaults
 from os import remove as osremove, path as ospath, environ
-from subprocess import Popen, run as srun
+from subprocess import run as srun
 from time import sleep, time
-from threading import Thread, Lock
+from threading import Lock
 from dotenv import load_dotenv
 from asyncio import get_event_loop
 

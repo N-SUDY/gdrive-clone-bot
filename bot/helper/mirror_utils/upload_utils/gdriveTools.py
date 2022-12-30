@@ -1,21 +1,19 @@
 from logging import getLogger, ERROR
 from time import time
 from pickle import load as pload
-from os import makedirs, path as ospath, listdir, remove as osremove
+from os import path as ospath, listdir
 from requests.utils import quote as rquote
-from io import FileIO
 from re import search as re_search
 from urllib.parse import parse_qs, urlparse
 from random import randrange
 from google.oauth2 import service_account
 from googleapiclient.discovery import build
 from googleapiclient.errors import HttpError
-from googleapiclient.http import MediaFileUpload, MediaIoBaseDownload
 from tenacity import retry, wait_exponential, stop_after_attempt, retry_if_exception_type, RetryError
 
 from bot.helper.telegram_helper.button_build import ButtonMaker
 from bot import config_dict, GLOBAL_EXTENSION_FILTER, DRIVES_NAMES, DRIVES_IDS, INDEX_URLS
-from bot.helper.ext_utils.bot_utils import get_readable_file_size, setInterval
+from bot.helper.ext_utils.bot_utils import get_readable_file_size
 from bot.helper.ext_utils.telegraph_helper import telegraph
 
 LOGGER = getLogger(__name__)

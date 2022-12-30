@@ -1,9 +1,7 @@
-from os import remove as osremove, path as ospath, mkdir, walk, listdir, rmdir, makedirs
-from sys import exit as sysexit
+from os import remove as osremove, path as ospath, walk
 from shutil import rmtree
-from subprocess import run as srun, check_output, Popen
 
-from bot import app, LOGGER, DOWNLOAD_DIR, get_client, config_dict, user_data
+from bot import LOGGER
 
 def clean_target(path: str):
     if ospath.exists(path):

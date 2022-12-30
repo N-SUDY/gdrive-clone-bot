@@ -4,8 +4,6 @@ from time import time
 from math import ceil
 from html import escape
 from psutil import virtual_memory, cpu_percent, disk_usage
-from requests import head as rhead
-from urllib.request import urlopen
 
 from bot import download_dict, download_dict_lock, botStartTime, DOWNLOAD_DIR, user_data, config_dict
 from bot.helper.telegram_helper.bot_commands import BotCommands
