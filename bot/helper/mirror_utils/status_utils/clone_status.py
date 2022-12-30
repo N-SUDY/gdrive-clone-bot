@@ -17,7 +17,8 @@ class CloneStatus:
     def size(self):
         return get_readable_file_size(self.__size)
 
-    def status(self):
+    @staticmethod
+    def status():
         return MirrorStatus.STATUS_CLONING
 
     def name(self):
